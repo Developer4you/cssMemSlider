@@ -1,0 +1,204 @@
+:root {
+    --padding-primary: 25px;
+}
+
+html, body {
+    margin:0;
+    background-color: #25282A;
+}
+
+#slider {
+    position: relative;
+    text-align: center;
+    top: 10px;
+    margin: 0 auto;
+}
+
+#slides article{
+    width: 20%;
+    float: left;
+}
+
+#slides .image{
+    width: 500%;
+    line-height: 0;
+}
+
+.overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+article img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#desktop:checked ~ #slider{
+    max-width: 55vw;
+    padding: var(--padding-primary) var(--padding-primary) 100px var(--padding-primary);
+    background-color: #25282A;
+}
+
+
+label, a{
+    cursor: pointer;
+}
+
+#active label {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    width: 20px;
+    height: 25px;
+}
+
+.all input{
+    display: none;
+}
+
+#switch1:checked ~ #slides .image{
+    margin-left: 0;
+}
+#switch2:checked ~ #slides .image{
+    margin-left: -100%;
+}
+#switch3:checked ~ #slides .image{
+    margin-left: -200%;
+}
+#switch4:checked ~ #slides .image{
+    margin-left: -300%;
+}
+#switch5:checked ~ #slides .image{
+    margin-left: -400%;
+}
+
+/*--------Buttons------------*/
+
+#active label>span{
+    display: block;
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    background: #71ABFF;
+}
+
+#active{
+    position: fixed;
+    right: 22%;
+    margin: var(--padding-primary) 0 0 0;
+    text-align: right;
+}
+
+#switch1:checked ~ #active label:nth-child(1) span,
+#switch2:checked ~ #active label:nth-child(2) span,
+#switch3:checked ~ #active label:nth-child(3) span,
+#switch4:checked ~ #active label:nth-child(4) span,
+#switch5:checked ~ #active label:nth-child(5) span{
+    box-sizing: border-box;
+    background-color: #25282A;
+    border: 2px solid #71ABFF;
+}
+
+#switch1:checked ~ #active label:nth-child(1):hover span,
+#switch2:checked ~ #active label:nth-child(2):hover span,
+#switch3:checked ~ #active label:nth-child(3):hover span,
+#switch4:checked ~ #active label:nth-child(4):hover span,
+#switch5:checked ~ #active label:nth-child(5):hover span{
+    box-sizing: border-box;
+    background-color: #25282A;
+    border: 2px solid honeydew;
+}
+
+#switch1 ~ #active label:nth-child(1):hover span,
+#switch2 ~ #active label:nth-child(2):hover span,
+#switch3 ~ #active label:nth-child(3):hover span,
+#switch4 ~ #active label:nth-child(4):hover span,
+#switch5 ~ #active label:nth-child(5):hover span{
+    box-sizing: border-box;
+    background-color: honeydew;
+    border: 2px solid honeydew;
+}
+
+#slides .image, #titles .titles_box {
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+/*---------Titles slider----------*/
+
+#titles article{
+    margin-top:30px;
+    width: 20%;
+    float: left;
+}
+
+.title_overflow {
+    width: 70%;
+    overflow: hidden;
+}
+
+.titles_box{
+    width: 500%;
+    line-height: 0;
+}
+
+#titles article div{
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    font-size: xx-large;
+    color: honeydew;
+}
+
+
+
+#switch1:checked ~ #titles .titles_box{
+    margin-left: 0;
+}
+#switch2:checked ~ #titles .titles_box{
+    margin-left: -100%;
+}
+#switch3:checked ~ #titles .titles_box{
+    margin-left: -200%;
+}
+#switch4:checked ~ #titles .titles_box{
+    margin-left: -300%;
+}
+#switch5:checked ~ #titles .titles_box{
+    margin-left: -400%;
+}
+
+/*-------mediaqueries---------*/
+@media (max-width: 320px) {
+
+    #desktop:checked ~ #slider{
+        max-width: 90vw;
+        padding: 2px 2px 60px 2px;
+    }
+
+    #active{
+        position: static;
+        text-align: center;
+    }
+
+    #active label>span{
+        border-radius: 5px;
+        width: 10px;
+        height: 10px;
+    }
+
+    #titles article div{
+        font-size: small;
+    }
+
+    #titles article{
+        margin-top:10px;
+    }
+  }
+
+  @media (min-width: 321px) and (max-width: 700px) {
+    #titles article div{
+        font-size: xx-small;
+    }
+  }
