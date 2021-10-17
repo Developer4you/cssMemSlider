@@ -36,7 +36,7 @@ article img{
 
 #desktop:checked ~ #slider{
     max-width: 55vw;
-    padding: var(--padding-primary) var(--padding-primary) 100px var(--padding-primary);
+    padding: var(--padding-primary) var(--padding-primary) 0 var(--padding-primary);
     background-color: #25282A;
 }
 
